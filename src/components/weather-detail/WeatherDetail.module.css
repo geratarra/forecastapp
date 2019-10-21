@@ -1,0 +1,22 @@
+.customChartWrapper {
+    margin: auto;
+}
+
+.title {
+    font-size: 1.2em;
+    color: rgb(237, 237, 237);
+    font-family: sans-serif;
+    line-height: 1.8em;
+    font-weight: 700;
+}
+
+.averageStatus {
+    margin-top: 2%;
+}
+
+.averageStatus > p {
+    display: inline-block;
+    color: rgb(237, 237, 237);
+    margin-left: 2%;
+    margin-right: 2%;
+}

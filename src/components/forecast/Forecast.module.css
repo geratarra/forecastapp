@@ -1,0 +1,10 @@
+.forecast {
+    white-space: nowrap;
+}
+
+.forecast > p {
+    font-size: 3em;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
