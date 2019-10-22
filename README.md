@@ -2,9 +2,9 @@
 
 This is just a little weather forecast project I've created to get started with React. It's been I while since I don't play with the library (actually I think I haven't play with it for real) and I don't want to get outdated. Nothing fancy, responsive or things like that. Just a simple little app made with love ❤️. I would really link to keep working with React so I would see if I can code some apps with some of the common and popular topics around React (like Redux and stuff..). We'll see..
 
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Don't forget to run `npm install` before trying to run the app
 
 ## Available Scripts
 
