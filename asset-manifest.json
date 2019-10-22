@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/forecastapp/static/css/main.0a72f240.chunk.css",
-    "main.js": "/forecastapp/static/js/main.9a26a5e1.chunk.js",
-    "main.js.map": "/forecastapp/static/js/main.9a26a5e1.chunk.js.map",
+    "main.js": "/forecastapp/static/js/main.104e58bb.chunk.js",
+    "main.js.map": "/forecastapp/static/js/main.104e58bb.chunk.js.map",
     "runtime~main.js": "/forecastapp/static/js/runtime~main.b0ede86d.js",
     "runtime~main.js.map": "/forecastapp/static/js/runtime~main.b0ede86d.js.map",
     "static/js/2.ec121b2a.chunk.js": "/forecastapp/static/js/2.ec121b2a.chunk.js",
     "static/js/2.ec121b2a.chunk.js.map": "/forecastapp/static/js/2.ec121b2a.chunk.js.map",
     "index.html": "/forecastapp/index.html",
-    "precache-manifest.d043e1b7ac8ffa3a294689354133b4d0.js": "/forecastapp/precache-manifest.d043e1b7ac8ffa3a294689354133b4d0.js",
+    "precache-manifest.672d13fba943b5a038e4b888487bb71e.js": "/forecastapp/precache-manifest.672d13fba943b5a038e4b888487bb71e.js",
     "service-worker.js": "/forecastapp/service-worker.js",
     "static/css/main.0a72f240.chunk.css.map": "/forecastapp/static/css/main.0a72f240.chunk.css.map"
   }
