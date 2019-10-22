@@ -51,7 +51,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <Router>
+                <Router basename="forecastapp">
                     <Route exact path="/" render={(props) => <Forecast {...props} forecast={forecast} />} />
                     <Route path="/sun" render={(props) => <WeatherDetail {...props} position={_position} />} />
                     <Route path="/mon" render={(props) => <WeatherDetail {...props} position={_position} />} />

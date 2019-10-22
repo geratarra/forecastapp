@@ -52,9 +52,6 @@ const WeatherDetail = (props) => {
             <YAxis tickFormatter={(label) => `${label}°`} dx={-10} tick={{ fill:'white', fontSize: 14 }} />
         </LineChart>
     );
-
-    console.log(props);
-    
     
     return (
         <div>
