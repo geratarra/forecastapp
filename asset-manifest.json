@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/forecastapp/static/css/main.0a72f240.chunk.css",
-    "main.js": "/forecastapp/static/js/main.f79c9cc3.chunk.js",
-    "main.js.map": "/forecastapp/static/js/main.f79c9cc3.chunk.js.map",
+    "main.css": "/forecastapp/static/css/main.311215b6.chunk.css",
+    "main.js": "/forecastapp/static/js/main.e7bcffc7.chunk.js",
+    "main.js.map": "/forecastapp/static/js/main.e7bcffc7.chunk.js.map",
     "runtime~main.js": "/forecastapp/static/js/runtime~main.b0ede86d.js",
     "runtime~main.js.map": "/forecastapp/static/js/runtime~main.b0ede86d.js.map",
-    "static/js/2.ec121b2a.chunk.js": "/forecastapp/static/js/2.ec121b2a.chunk.js",
-    "static/js/2.ec121b2a.chunk.js.map": "/forecastapp/static/js/2.ec121b2a.chunk.js.map",
+    "static/js/2.8fed171f.chunk.js": "/forecastapp/static/js/2.8fed171f.chunk.js",
+    "static/js/2.8fed171f.chunk.js.map": "/forecastapp/static/js/2.8fed171f.chunk.js.map",
     "index.html": "/forecastapp/index.html",
-    "precache-manifest.decf43a8bb3ca6a3fcd97313ee949ce1.js": "/forecastapp/precache-manifest.decf43a8bb3ca6a3fcd97313ee949ce1.js",
+    "precache-manifest.b5eab4b5fcb5e7732b64d7a9c220a396.js": "/forecastapp/precache-manifest.b5eab4b5fcb5e7732b64d7a9c220a396.js",
     "service-worker.js": "/forecastapp/service-worker.js",
-    "static/css/main.0a72f240.chunk.css.map": "/forecastapp/static/css/main.0a72f240.chunk.css.map"
+    "static/css/main.311215b6.chunk.css.map": "/forecastapp/static/css/main.311215b6.chunk.css.map"
   }
 }
