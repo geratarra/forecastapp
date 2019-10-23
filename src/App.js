@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as HashRouter, Route } from "react-router-dom"
 
 import Forecast from './components/forecast/Forecast';
 import WeatherDetail from './components/weather-detail/WeatherDetail';
@@ -51,7 +51,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <Router basename="forecastapp">
+                <HashRouter basename={process.env.REACT_APP_BASENAME}>
                     <Route exact path="/" render={(props) => <Forecast {...props} forecast={forecast} />} />
                     <Route path="/sun" render={(props) => <WeatherDetail {...props} position={_position} />} />
                     <Route path="/mon" render={(props) => <WeatherDetail {...props} position={_position} />} />
@@ -60,7 +60,7 @@ function App() {
                     <Route path="/thu" render={(props) => <WeatherDetail {...props} position={_position} />} />
                     <Route path="/fri" render={(props) => <WeatherDetail {...props} position={_position} />} />
                     <Route path="/sat" render={(props) => <WeatherDetail {...props} position={_position} />} />
-                </Router>
+                </HashRouter>
             </header>
         </div>
     );
