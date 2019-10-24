@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
+import { useStoreState } from 'easy-peasy';
+import { getDayOfWeek } from '../../utils';
 
 import { API_KEY, API_URI, UNITS } from '../../config';
 
@@ -10,6 +12,7 @@ const FORECAST_URL = API_URI + '/forecast?appid=' + API_KEY;
 
 const WeatherDetail = (props) => {
 
+    const selectedDay = useStoreState(state => state.selectedDay.item);
     const [forecastDetail, setForecastDetail] = useState(undefined);
     if (!forecastDetail) {
 
@@ -31,15 +34,24 @@ const WeatherDetail = (props) => {
     }
 
     if (forecastDetail === undefined) {
-        return <h3 className="loading">Loading...</h3>
+        return <h3 className="white-center-text">Loading...</h3>
     } else if (forecastDetail === null) {
         return <h3>Error!</h3>
     }
     
     const currentDay = props.location.pathname.slice(1);
+    let dayOfWeek = selectedDay.dayOfWeek,
+        flag = false;
     const dailyForecast = forecastDetail.filter(item => {
-        const auxCurrentDay = new Date(item.dt*1000);
-        return currentDay === auxCurrentDay.toDateString().slice(0, 3).toLowerCase();
+        const auxCurrentDay = new Date(item.dt_txt);
+        if (currentDay === auxCurrentDay.toDateString().slice(0, 3).toLowerCase()) {
+            if (!flag && !dayOfWeek) {
+                dayOfWeek = getDayOfWeek(auxCurrentDay);
+                flag = true;
+            }
+            return true;
+        }
+        return false;
     });
 
     dailyForecast.map(item => item.x_label = new Date(item.dt_txt).toTimeString().slice(0, 5));
@@ -52,16 +64,15 @@ const WeatherDetail = (props) => {
             <YAxis tickFormatter={(label) => `${label}°`} dx={-10} tick={{ fill:'white', fontSize: 14 }} />
         </LineChart>
     );
-    
     return (
         <div>
-            <span className={style.title}>{props.location.state.dayOfWeek}</span>
+            <span className={style.title}>{selectedDay.dayOfWeek ? selectedDay.dayOfWeek : dayOfWeek }</span>
             <div>
                 {renderLineChart}
                 <div className={style.averageStatus}>
-                    <p><span>Pressure:&nbsp;</span><span>{props.location.state.pressure}&nbsp;hPa</span></p>
-                    <p><span>Humidity:&nbsp;</span><span>{props.location.state.humidity}%</span></p>
-                    <p><span>Speed:&nbsp;</span><span>{props.location.state.speed}&nbsp;meter/sec</span></p>
+                    {selectedDay.pressure ? <p><span>Pressure:&nbsp;</span><span>{selectedDay.pressure}&nbsp;hPa</span></p> : null}
+                    {selectedDay.humidity ? <p><span>Humidity:&nbsp;</span><span>{selectedDay.humidity}%</span></p> : null}
+                    {selectedDay.speed ? <p><span>Speed:&nbsp;</span><span>{selectedDay.speed}&nbsp;meter/sec</span></p> : null}
                 </div>
             </div>
         </div>
