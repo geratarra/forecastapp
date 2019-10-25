@@ -22,7 +22,7 @@ function Forecast(props) {
                 speed: item.speed
             };
             cards.push(
-                <WeatherCard props={_props} key={index}></WeatherCard>
+                <WeatherCard setWeatherDetail={props.setWeatherDetail} props={_props} key={index}></WeatherCard>
             );
         });
         return cards;

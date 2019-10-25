@@ -1,6 +1,5 @@
 import React from 'react';
 import { useHistory } from "react-router";
-import { useStoreActions } from 'easy-peasy';
 import { getDayOfWeek } from '../../utils';
 
 import style from './WeatherCard.module.css';
@@ -11,11 +10,10 @@ const WeatherCard = (props) => {
     const day = getDayOfWeek(date);
     const dateLabel = day.slice(0, 3);
     const unitsSymbol = props.props.units === 'metric' ? 'C°' : 'F°';
-    const selectDay = useStoreActions(actions => actions.selectedDay.select);
 
     const clickedOnCard = (day) => {
         const path = '/' + day.slice(0, 3).toLowerCase();
-        selectDay({ dayOfWeek: day, humidity: props.props.humidity, pressure: props.props.pressure, speed: props.props.speed });
+        props.setWeatherDetail({ dayOfWeek: day, humidity: props.props.humidity, pressure: props.props.pressure, speed: props.props.speed });
         history.push(path);
     };
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
-import { useStoreState } from 'easy-peasy';
 import { getDayOfWeek } from '../../utils';
 
 import { API_KEY, API_URI, UNITS } from '../../config';
@@ -12,7 +11,12 @@ const FORECAST_URL = API_URI + '/forecast?appid=' + API_KEY;
 
 const WeatherDetail = (props) => {
 
-    const selectedDay = useStoreState(state => state.selectedDay.item);
+    let wDetail;
+    if (props.history.action === "POP" || !props.wDetail) {
+        wDetail = {};
+    } else {
+        wDetail = props.wDetail;
+    }
     const [forecastDetail, setForecastDetail] = useState(undefined);
     if (!forecastDetail) {
 
@@ -32,7 +36,7 @@ const WeatherDetail = (props) => {
             console.log(error);
         });
     }
-
+    
     if (forecastDetail === undefined) {
         return <h3 className="white-center-text">Loading...</h3>
     } else if (forecastDetail === null) {
@@ -40,7 +44,7 @@ const WeatherDetail = (props) => {
     }
     
     const currentDay = props.location.pathname.slice(1);
-    let dayOfWeek = selectedDay.dayOfWeek,
+    let dayOfWeek = wDetail.dayOfWeek,
         flag = false;
     const dailyForecast = forecastDetail.filter(item => {
         const auxCurrentDay = new Date(item.dt_txt);
@@ -66,13 +70,13 @@ const WeatherDetail = (props) => {
     );
     return (
         <div>
-            <span className={style.title}>{selectedDay.dayOfWeek ? selectedDay.dayOfWeek : dayOfWeek }</span>
+            <span className={style.title}>{ dayOfWeek }</span>
             <div>
                 {renderLineChart}
                 <div className={style.averageStatus}>
-                    {selectedDay.pressure ? <p><span>Pressure:&nbsp;</span><span>{selectedDay.pressure}&nbsp;hPa</span></p> : null}
-                    {selectedDay.humidity ? <p><span>Humidity:&nbsp;</span><span>{selectedDay.humidity}%</span></p> : null}
-                    {selectedDay.speed ? <p><span>Speed:&nbsp;</span><span>{selectedDay.speed}&nbsp;meter/sec</span></p> : null}
+                    {wDetail.pressure ? <p><span>Pressure:&nbsp;</span><span>{wDetail.pressure}&nbsp;hPa</span></p> : null}
+                    {wDetail.humidity ? <p><span>Humidity:&nbsp;</span><span>{wDetail.humidity}%</span></p> : null}
+                    {wDetail.speed ? <p><span>Speed:&nbsp;</span><span>{wDetail.speed}&nbsp;meter/sec</span></p> : null}
                 </div>
             </div>
         </div>
