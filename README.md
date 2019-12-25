@@ -4,7 +4,9 @@ This is just a little weather forecast project I've created to get started with 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Don't forget to run `npm install` before trying to run the app
+Don't forget to run `npm install` before trying to run the app.
+
+Demo: https://geratarra.github.io/forecastapp/#/
 
 ## Available Scripts
 
